@@ -35,8 +35,7 @@ class Coverage(object):
 #Pull through GeneNames with low coverage
 		self.low_gene_list = self.low_coverage['GeneName']
 
-#Convert dataframes into csv files; one file contains only gene names
-#and the other contains more information about the partially covered exons
+#Convert dataframes into csv files; one file contains only gene names and the other contains more information about the partially covered exons
 		self.low_gene_list.to_csv('gene_names.csv', sep='\t', index=False)
 		self.low_coverage.to_csv('low_coverage_summary.csv', sep='\t', index=False)
 
