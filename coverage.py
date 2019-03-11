@@ -38,7 +38,11 @@ class Coverage(object):
 		#print self.low_gene_list_nodup
 
 #Convert dataframes into csv files; one file contains only gene names and the other contains more information about the partially covered exons
+<<<<<<< HEAD
 		self.low_gene_list_nodup.to_csv('gene_names.csv', sep='\t', index=False)
+=======
+		self.low_gene_list.to_csv('gene_names.csv', sep='\t', index=False)
+>>>>>>> 17a74d39a9d8c5c1f2dac7b3a9bae11a27244169
 		self.low_coverage.to_csv('low_coverage_summary.csv', sep='\t', index=False)
 
 #Allows script to be run from command line and specifies arguments
