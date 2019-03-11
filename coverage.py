@@ -45,7 +45,7 @@ class Coverage(object):
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description="Insert input file name and output file name")
 	parser.add_argument('-i', action='store', dest='input_file', required='TRUE', help='Sambamba ouput file location')
-	#parser.add_argument('-o', action='store', dest='output_file', default = 'geneNames.pdf', help='Output file location')
+	
 
 	args = parser.parse_args()
 	final_coverage = Coverage(args.input_file)
