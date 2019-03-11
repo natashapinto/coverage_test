@@ -26,7 +26,7 @@ class Coverage(object):
 		self.data.columns = ["chromosome", "start_pos", "end_pos", "full_pos",
 		"NotUsed", "NotUsed", "GeneSys_Accession", "size", "read_count", "meanCoverage",
 		"percentage30", "sampleName"]	
-		self.data['GeneName'], self.data['Accession'] = self.data['GeneSys_Accession'].str.split(';', 1).str
+		self.data['GeneName'], self.data['Accession'] = self.data['GeneSys_Accession'].str.split(';').str
 	
 #Use the percentage30 column to get rows with less than 100% coverage at 30x
 		self.low_coverage = self.data.loc[self.data['percentage30'] <100]
