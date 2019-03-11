@@ -16,9 +16,8 @@ import numpy
 
 class Coverage(object):
 
-	def __init__(self, input_file, output_file):
+	def __init__(self, input_file):
 		self.input_file = input_file
-		self.output_file = output_file 
 
 #Load data from input file into pandas dataframe and assign column headers
 
@@ -38,21 +37,18 @@ class Coverage(object):
 		#print self.low_gene_list_nodup
 
 #Convert dataframes into csv files; one file contains only gene names and the other contains more information about the partially covered exons
-<<<<<<< HEAD
 		self.low_gene_list_nodup.to_csv('gene_names.csv', sep='\t', index=False)
-=======
-		self.low_gene_list.to_csv('gene_names.csv', sep='\t', index=False)
->>>>>>> 17a74d39a9d8c5c1f2dac7b3a9bae11a27244169
+
 		self.low_coverage.to_csv('low_coverage_summary.csv', sep='\t', index=False)
 
 #Allows script to be run from command line and specifies arguments
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description="Insert input file name and output file name")
 	parser.add_argument('-i', action='store', dest='input_file', required='TRUE', help='Sambamba ouput file location')
-	parser.add_argument('-o', action='store', dest='output_file', default = 'geneNames.pdf', help='Output file location')
+	#parser.add_argument('-o', action='store', dest='output_file', default = 'geneNames.pdf', help='Output file location')
 
 	args = parser.parse_args()
-	final_coverage = Coverage(args.input_file, args.output_file)
+	final_coverage = Coverage(args.input_file)
 	final_coverage.read_file()
 
 
